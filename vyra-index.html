@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VYRA — Watch Different</title>
+<meta name="description" content="VYRA — a next-generation video experience.">
+<style>
+:root{--bg:#050608;--panel:#0b0e13;--line:#ffffff18;--text:#f7f8fa;--muted:#8b929d;--acid:#a7ff3f}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.045;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+a{text-decoration:none;color:inherit}button{font:inherit;cursor:pointer}.top{position:fixed;z-index:40;top:18px;left:50%;transform:translateX(-50%);width:min(1180px,calc(100% - 28px));height:64px;padding:0 10px 0 22px;border:1px solid var(--line);border-radius:22px;background:#080a0eb8;backdrop-filter:blur(24px);display:flex;align-items:center;justify-content:space-between;box-shadow:0 20px 70px #0008}
+.brand{display:flex;align-items:center;gap:11px;font-weight:850;letter-spacing:-.05em}.mark{width:30px;height:30px;border-radius:10px;background:var(--acid);color:#080a08;display:grid;place-items:center;transform:rotate(-8deg)}
+.nav{display:flex;gap:28px;color:#969da7;font-size:13px}.nav a:hover{color:#fff}.actions{display:flex;gap:8px}.btn{border:1px solid var(--line);background:#10141a;color:#fff;border-radius:15px;padding:11px 17px}.primary{background:#f5f7f8;color:#080a0d;border-color:#fff;font-weight:750}
+.hero{min-height:100vh;display:grid;place-items:center;text-align:center;position:relative;padding:140px 20px 90px}.orb{position:absolute;width:720px;height:720px;border-radius:50%;left:50%;top:48%;transform:translate(-50%,-50%);background:radial-gradient(circle at 50% 45%,#a7ff3f33,transparent 31%),radial-gradient(circle,#6578ff22,transparent 55%);filter:blur(14px);animation:breathe 7s ease-in-out infinite}
+@keyframes breathe{50%{transform:translate(-50%,-50%) scale(1.08);opacity:.7}}.hero-inner{position:relative;max-width:1100px}.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:99px;padding:8px 12px;color:#b9c0c9;background:#ffffff08;font-size:11px;letter-spacing:.12em;text-transform:uppercase}.dot{width:6px;height:6px;border-radius:50%;background:var(--acid);box-shadow:0 0 14px var(--acid)}
+h1{font-size:clamp(68px,11vw,150px);line-height:.84;letter-spacing:-.085em;margin:28px 0;font-weight:850}h1 span{display:block;color:transparent;-webkit-text-stroke:1px #ffffff66}.sub{max-width:600px;margin:auto;color:#8f96a0;font-size:16px;line-height:1.7}.hero-cta{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:34px}.big{padding:15px 22px;border-radius:17px}.scroll{position:absolute;bottom:28px;color:#5e6671;font-size:10px;letter-spacing:.18em;text-transform:uppercase}
+.marquee{overflow:hidden;border-block:1px solid var(--line);padding:15px 0;color:#555d68;font-size:11px;letter-spacing:.18em;white-space:nowrap}.track{display:inline-block;animation:move 22s linear infinite}@keyframes move{to{transform:translateX(-50%)}}
+section{padding:110px 20px}.wrap{width:min(1180px,100%);margin:auto}.head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:42px}.kicker{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--acid)}h2{font-size:clamp(40px,6vw,72px);letter-spacing:-.065em;line-height:.95;margin:10px 0}.copy{max-width:390px;color:#737b86;font-size:14px;line-height:1.7}
+.stage{min-height:620px;border:1px solid var(--line);border-radius:34px;overflow:hidden;position:relative;background:radial-gradient(circle at 70% 25%,#a7ff3f29,transparent 20%),radial-gradient(circle at 25% 80%,#6578ff26,transparent 25%),linear-gradient(135deg,#11161c,#07090d 55%,#0d1117)}.stage:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 49.8%,#fff0a 50%,transparent 50.2%),linear-gradient(0deg,transparent 49.8%,#fff0a 50%,transparent 50.2%);background-size:80px 80px;opacity:.45}
+.float{position:absolute;border:1px solid #ffffff1c;background:#080b0fc7;backdrop-filter:blur(20px);border-radius:24px;padding:18px;box-shadow:0 30px 80px #0008;z-index:2}.card1{left:4%;top:9%;width:190px}.card2{right:4%;bottom:9%;width:210px}.label{font-size:12px;color:#8f97a2;margin-bottom:8px}.metric{font-size:28px;font-weight:800;letter-spacing:-.05em}.mini{color:var(--acid);font-size:11px;margin-top:5px}
+.player{width:min(680px,78%);left:50%;top:50%;transform:translate(-50%,-50%);padding:0;overflow:hidden}.video{height:360px;display:grid;place-items:center;background:radial-gradient(circle,#a7ff3f55,transparent 17%),conic-gradient(from 140deg,#10161b,#28351f,#0b1016,#1a1825,#10161b)}.play{width:86px;height:86px;border-radius:50%;background:#fff;color:#080a0c;display:grid;place-items:center;font-size:26px;padding-left:4px;box-shadow:0 0 80px #fff4}.controls{padding:16px 18px}.bar{height:3px;background:#313740;border-radius:99px}.bar i{display:block;width:38%;height:100%;background:var(--acid)}.meta{display:flex;justify-content:space-between;margin-top:13px;color:#87909b;font-size:12px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.feature{border:1px solid var(--line);border-radius:26px;padding:27px;min-height:250px;background:linear-gradient(145deg,#0d1015,#080a0d);position:relative;overflow:hidden}.num{color:#555d67;font-size:11px}.feature h3{font-size:24px;letter-spacing:-.04em;margin:65px 0 12px}.feature p{color:#737b86;font-size:13px;line-height:1.6}
+.cta{text-align:center;border:1px solid var(--line);border-radius:34px;padding:90px 20px;background:radial-gradient(circle at 50% 0,#a7ff3f1c,transparent 45%),#0a0d11}.cta h2{max-width:800px;margin:12px auto 25px}.cta p{color:#737b86;max-width:500px;margin:auto;line-height:1.7}footer{padding:35px 20px 50px;border-top:1px solid var(--line);color:#5d6570;font-size:11px}.foot{width:min(1180px,100%);margin:auto;display:flex;justify-content:space-between}
+@media(max-width:760px){.nav{display:none}.top{height:58px}.actions .btn:first-child{display:none}.hero{padding-top:130px}.orb{width:500px;height:500px}h1{font-size:67px}.head{display:block}.copy{margin-top:22px}.grid{grid-template-columns:1fr}.stage{min-height:530px}.player{width:88%}.video{height:280px}.card1{left:3%;top:5%;transform:scale(.82);transform-origin:left top}.card2{right:3%;bottom:4%;transform:scale(.82);transform-origin:right bottom}.foot{display:block}.foot div+div{margin-top:12px}}
+
+/* NEXT-GEN INTERACTION LAYER */
+.hero{isolation:isolate;overflow:hidden}
+.hero:before,.hero:after{content:"";position:absolute;border:1px solid #ffffff0d;border-radius:50%;pointer-events:none}
+.hero:before{width:82vw;height:82vw;max-width:980px;max-height:980px;animation:spin 34s linear infinite}
+.hero:after{width:55vw;height:55vw;max-width:650px;max-height:650px;border-style:dashed;animation:spin 24s linear infinite reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero-inner{z-index:3}
+.hero h1{animation:rise 1.1s cubic-bezier(.16,1,.3,1) both}
+.hero .sub{animation:rise 1.1s .12s cubic-bezier(.16,1,.3,1) both}
+.hero .hero-cta{animation:rise 1.1s .22s cubic-bezier(.16,1,.3,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(28px) scale(.98)}to{opacity:1;transform:none}}
+.btn{transition:transform .25s ease,background .25s ease,border-color .25s ease,box-shadow .25s ease}
+.btn:hover{transform:translateY(-3px);box-shadow:0 15px 35px #0008}
+.primary:hover{box-shadow:0 0 35px #a7ff3f22}
+.feature{transition:transform .35s ease,border-color .35s ease,background .35s ease}
+.feature:hover{transform:translateY(-8px) rotateX(2deg);border-color:#ffffff26;background:linear-gradient(145deg,#11161d,#080a0d)}
+.stage{box-shadow:inset 0 0 120px #0009,0 30px 100px #0005}
+.stage .player{transition:transform .45s cubic-bezier(.16,1,.3,1)}
+.stage:hover .player{transform:translate(-50%,-50%) scale(1.025)}
+.video{position:relative}
+.video:before{content:"";position:absolute;width:180px;height:180px;border-radius:50%;border:1px solid #a7ff3f44;animation:pulse 3s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.35);opacity:.25}}
+.float{transition:transform .5s cubic-bezier(.16,1,.3,1)}
+.stage:hover .card1{transform:translate(8px,-8px)}
+.stage:hover .card2{transform:translate(-8px,8px)}
+@media(max-width:760px){.hero:before{width:125vw;height:125vw}.hero:after{width:90vw;height:90vw}}
+</style>
+</head>
+<body>
+<header class="top">
+<a class="brand" href="#"><span class="mark">V</span>VYRA</a>
+<nav class="nav"><a href="#discover">Discover</a><a href="#experience">Experience</a><a href="#creators">Creators</a></nav>
+<div class="actions"><button class="btn" onclick="alert('Connect your authentication backend here.')">Sign in</button><button class="btn primary" onclick="alert('Connect your registration backend here.')">Start creating</button></div>
+</header>
+
+<main>
+<section class="hero"><div class="orb"></div><div class="hero-inner">
+<div class="eyebrow"><span class="dot"></span> The next video interface</div>
+<h1>WATCH<br><span>DIFFERENT.</span></h1>
+<p class="sub">A cinematic home for video, built around discovery, creators and moments that feel alive — not another wall of thumbnails.</p>
+<div class="hero-cta"><a class="btn primary big" href="#experience">Enter the experience →</a><a class="btn big" href="#creators">For creators</a></div>
+</div><div class="scroll">scroll to explore ↓</div></section>
+
+<div class="marquee"><div class="track">DISCOVER • WATCH • CREATE • CONNECT • DISCOVER • WATCH • CREATE • CONNECT • DISCOVER • WATCH • CREATE • CONNECT • </div></div>
+
+<section id="experience"><div class="wrap"><div class="head"><div><div class="kicker">01 / Experience</div><h2>Not a feed.<br>A space.</h2></div><p class="copy">The interface removes visual noise. Content becomes the environment, while motion and depth guide the eye.</p></div>
+<div class="stage">
+<div class="float card1"><div class="label">LIVE ATTENTION</div><div class="metric">82.4K</div><div class="mini">↑ 18.7% this hour</div></div>
+<div class="float player"><div class="video"><div class="play">▶</div></div><div class="controls"><div class="bar"><i></i></div><div class="meta"><span>00:42 / 02:18</span><span>VYRA ORIGINAL</span></div></div></div>
+<div class="float card2"><div class="label">CREATOR MOMENT</div><div class="metric">+24.8%</div><div class="mini">audience growth</div></div>
+</div></div></section>
+
+<section id="discover"><div class="wrap"><div class="head"><div><div class="kicker">02 / Why VYRA</div><h2>Designed for<br>the next era.</h2></div><p class="copy">A visual language made to feel premium on a phone, laptop or giant screen.</p></div>
+<div class="grid">
+<article class="feature"><div class="num">01</div><h3>Living discovery</h3><p>Instead of endless cards, content moves through an intentional visual journey that makes exploration feel continuous.</p></article>
+<article class="feature"><div class="num">02</div><h3>Creator first</h3><p>Every view, signal and interaction can become part of a future creator dashboard and monetization layer.</p></article>
+<article class="feature"><div class="num">03</div><h3>Quiet technology</h3><p>Complex systems stay behind the interface so the experience feels simple, fast and almost invisible.</p></article>
+</div></div></section>
+
+<section id="creators"><div class="wrap"><div class="cta"><div class="kicker">03 / Build with us</div><h2>Your videos deserve a world, not another website.</h2><p>VYRA's frontend is ready for accounts, uploads, streaming, search, analytics, monetization and creator payouts.</p><div class="hero-cta"><button class="btn primary big" onclick="alert('Backend connection coming next.')">Create your channel →</button></div></div></div></section>
+</main>
+<footer><div class="foot"><div>© 2026 VYRA / NEXT VIDEO PLATFORM</div><div>Prototype interface · Backend ready to connect</div></div></footer>
+</body>
+</html>
