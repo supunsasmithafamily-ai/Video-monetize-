@@ -1,0 +1,10 @@
+{
+  "appId": "com.vyra.app",
+  "appName": "VYRA",
+  "webDir": "public",
+  "bundledWebRuntime": false,
+  "server": {
+    "url": "https://vercel.app",
+    "cleartext": true
+  }
+}
