@@ -1,0 +1,12 @@
+{
+  "name": "vyra-fullstack-app",
+  "version": "1.0.0",
+  "description": "Fullstack production build for VYRA web landing page",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
